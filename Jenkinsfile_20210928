@@ -1,6 +1,8 @@
 pipeline {
  agent any
- 
+ environment {
+  DOCKER = credentials ('dockerhub')
+ }
  stages {
   stage ('compile the application') {
    steps {
