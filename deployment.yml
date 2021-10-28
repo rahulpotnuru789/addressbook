@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:  
+  labels:
+    app: deploymnetname
+  name: deploymnetname
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: deploymnetname
+  strategy: {}
+  template:
+    metadata:
+      name: addressbook-metadata
+      labels:
+        app: deploymnetname
+    spec:
+      containers:
+      - image: himanshu185/addressbook:20210928.9 
+        name: addressbook
